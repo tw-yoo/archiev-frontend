@@ -1,0 +1,22 @@
+.data_selector{
+    width:300px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.architecture_selector{
+    width:300px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+div.left {
+    width: 30%;
+    float: left;
+}
+
+div.right {
+    width: 70%;
+    float: right;
+    background: blue;
+}

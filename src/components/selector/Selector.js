@@ -2,22 +2,18 @@ import Form from 'react-bootstrap/Form';
 
 const Selector = (props) => {
 
+    const {options, currentSelected, setOptions, updateItems} = props;
+
     return (
         <>
             <Form>
-                {['checkbox', 'radio'].map((type) => (
+                {options.map((type) => (
                     <div key={`default-${type}`} className="mb-3">
                     <Form.Check 
-                        type={type}
-                        id={`default-${type}`}
-                        label={`default ${type}`}
-                    />
-
-                    <Form.Check
-                        disabled
-                        type={type}
-                        label={`disabled ${type}`}
-                        id={`disabled-default-${type}`}
+                        type='checkbox'
+                        id={`${type}`}
+                        label={`${type}`}
+                        onClick={(e) => {updateItems(e, currentSelected, setOptions)}}
                     />
                     </div>
                 ))}
