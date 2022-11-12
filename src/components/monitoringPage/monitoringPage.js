@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
 
 import Selector from  '../selector/Selector'
+import GraphButton from '../button/button';
+import ReesultGraph from '../graph/resultGraph';
 
 import './monitoringPage.css'
 
@@ -32,7 +34,8 @@ const MonitoringPage = (props) => {
     return (
         <>
             <div>
-                <div class='left'>
+                <div className='left'>
+                    <h1>Datasets</h1>
                     <div className="data_selector">
                         <Selector 
                         options={dataOptions}
@@ -42,6 +45,7 @@ const MonitoringPage = (props) => {
                         />
                     </div>
 
+                    <h1>Architectures</h1>
                     <div className="architecture_selector">
                         <Selector 
                         options={architectureOptions}
@@ -50,10 +54,15 @@ const MonitoringPage = (props) => {
                         updateItems={handleCheck}
                         />
                     </div>
+
+                    <div>
+                        <GraphButton />
+                    </div>
+
                 </div>
 
-                <div class='right'>
-                    
+                <div className='right'>
+                    <ReesultGraph />
                 </div>
             </div>            
         </>
